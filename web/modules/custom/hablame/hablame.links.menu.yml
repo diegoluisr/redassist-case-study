@@ -1,0 +1,6 @@
+hablame.settings:
+  title: 'Hablame settings'
+  route_name: hablame.settings
+  descritpion: 'Hablame.co settings'
+  parent: system.admin_config_system
+  weight: 122

@@ -1,0 +1,14 @@
+services:
+  # SERVICES
+  autentic.service:
+    class: Drupal\autentic\Service\AutenticService
+    arguments: ['@config.factory','@entity_type.manager','@file_system','@http_client_factory','@logger.factory','@state','@datetime.time']
+  signed_contract.service:
+    class: Drupal\autentic\Service\SignedContractService
+    arguments: ['@entity_type.manager']
+  # COMMANDS
+  autentic.commands:
+    class: Drupal\autentic\Command\AutenticCommand
+    arguments: ['@autentic.service']
+    tags:
+      - { name: drush.command }

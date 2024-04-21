@@ -1,0 +1,21 @@
+uuid: 098a5baa-b3b4-451a-b4c2-e2017038d3bc
+langcode: es
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - media
+    - paragraphs
+id: media.field_signers
+field_name: field_signers
+entity_type: media
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

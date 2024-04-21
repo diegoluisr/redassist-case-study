@@ -1,0 +1,21 @@
+uuid: a8213009-15d6-414a-a9ea-2b6be7f2341d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_autentic_sign_phone
+    - paragraphs.paragraphs_type.autentic_signer
+  module:
+    - telephone
+id: paragraph.autentic_signer.field_autentic_sign_phone
+field_name: field_autentic_sign_phone
+entity_type: paragraph
+bundle: autentic_signer
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,31 @@
+uuid: fb7c95c9-806f-44fb-bc5a-2ea2c7b15e5b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_contract
+    - media.type.signed_document
+  module:
+    - file
+    - file_field_replace
+third_party_settings:
+  file_field_replace:
+    replace: '0'
+id: media.signed_document.field_media_contract
+field_name: field_media_contract
+entity_type: media
+bundle: signed_document
+label: 'Media Contract (PDF)'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

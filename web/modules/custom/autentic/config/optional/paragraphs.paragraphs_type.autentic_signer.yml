@@ -1,0 +1,10 @@
+uuid: 064501bb-b8d9-4d2d-a402-ebc99018ee18
+langcode: es
+status: true
+dependencies: {  }
+id: autentic_signer
+label: 'Firmante (Autentic)'
+icon_uuid: null
+icon_default: null
+description: 'Este paragraph es usando por el modulo autentic.'
+behavior_plugins: {  }

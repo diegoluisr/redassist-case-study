@@ -1,0 +1,27 @@
+services:
+  # COMMANDS
+  gsuite.command:
+    class: Drupal\gsuite\Command\GSuiteCommand
+    arguments: ['@gsuite.drive']
+    tags:
+      - { name: drush.command }
+
+  # SERVICES
+  gsuite.client.factory:
+    class: '\Drupal\gsuite\Service\ClientFactory'
+    arguments:
+      - '@settings'
+      - '@state'
+      - '@messenger'
+
+  gsuite.drive:
+    class: 'Drupal\gsuite\Service\Drive'
+    arguments:
+      - '@gsuite.client.factory'
+      - '@logger.factory'
+
+  gsuite.gmail:
+    class: 'Drupal\gsuite\Service\Gmail'
+    arguments:
+      - '@gsuite.client.factory'
+      - '@logger.factory'

@@ -1,0 +1,11 @@
+services:
+  # Commands
+  ffmpeg.commands:
+    class: Drupal\ffmpeg\Command\FfmpegCommand
+    arguments: ['@ffmpeg.service']
+    tags:
+      - { name: drush.command }
+  # Services
+  ffmpeg.service:
+    class: Drupal\ffmpeg\Service\FfmpegService
+    arguments: ['@config.factory', '@module_handler', '@file_system', '@lock', '@logger.factory']

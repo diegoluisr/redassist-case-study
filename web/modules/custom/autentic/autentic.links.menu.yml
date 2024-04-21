@@ -1,0 +1,6 @@
+autentic.settings:
+  title: 'AutenTIC settings'
+  route_name: autentic.settings
+  descritpion: 'AutenTIC settings'
+  parent: system.admin_config_system
+  weight: 121

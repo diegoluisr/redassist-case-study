@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * @file
+ * Contract module.
+ */
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_update_N().
+ */
+function contract_update_8101() {
+  // Clear the caches to ensure the entity type is gone.
+  \Drupal::entityTypeManager()->clearCachedDefinitions();
+  \Drupal::service('entity_field.manager')->clearCachedFieldDefinitions();
+
+  $field_bundle_spec = [
+    'type' => 'varchar',
+    'length' => '32',
+    'not null' => TRUE,
+  ];
+
+  $field_file_spec = [
+    'type' => 'text',
+  ];
+
+  $field_file_display_spec = [
+    'type' => 'int',
+    'size' => 'tiny',
+    'disp-size' => 3,
+    'unsigned' => TRUE,
+    'default' => 1,
+  ];
+
+  $db_connection = \Drupal::database()->schema();
+
+  $db_connection->changeField('contract', 'bundle', 'bundle', $field_bundle_spec);
+  $db_connection->addField('contract__attackments', 'attackments_display', $field_file_display_spec);
+  $db_connection->addField('contract__attackments', 'attackments_description', $field_file_spec);
+
+  // Get update manager.
+  $manager = \Drupal::entityDefinitionUpdateManager();
+
+  $field_storage_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(new TranslatableMarkup('Type'))
+    ->setSetting('target_type', 'contract_type')
+    ->setTargetBundle('contract_type')
+    ->setTargetEntityTypeId('contract_type')
+    ->setRequired(TRUE)
+    ->setReadOnly(TRUE);
+
+  $docs_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(new TranslatableMarkup('Documents'))
+    ->setDescription(new TranslatableMarkup('The documents related to the contract'))
+    ->setSetting('target_type', 'media')
+    ->setSetting('handler', 'default')
+    ->setSetting('handler_settings', [
+      'target_bundles' => [
+        'contract' => 'contract',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayOptions('form', [
+      'type' => 'inline_entity_form_complex',
+    ])
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'type' => 'entity_reference_label',
+      'weight' => -3,
+    ])
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED);
+
+  $file_definition = BaseFieldDefinition::create('file')
+    ->setLabel(new TranslatableMarkup('Attachments'))
+    ->setDescription(new TranslatableMarkup('The attachments related to the contract'))
+    ->setSettings([
+      'uri_scheme' => 'public',
+      'description_field' => 0,
+      'file_extensions' => 'pdf png jpg jpeg',
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayOptions('form', [
+      'type' => 'file',
+    ])
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDisplayOptions('view', [
+      'type' => 'file',
+    ])
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED);
+
+  $uid_definition = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(new TranslatableMarkup('User Name'))
+    ->setDescription(new TranslatableMarkup('The Name of the associated user.'))
+    ->setSetting('target_type', 'user')
+    ->setSetting('handler', 'default')
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'author',
+      'weight' => -3,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => 60,
+        'autocomplete_type' => 'tags',
+        'placeholder' => '',
+      ],
+      'weight' => -3,
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $manager->installFieldStorageDefinition(
+    'bundle',
+    'contract',
+    'contract',
+    $field_storage_definition
+  );
+
+  $manager->installFieldStorageDefinition(
+    'docs',
+    'contract',
+    'contract',
+    $docs_definition
+  );
+
+  $manager->installFieldStorageDefinition(
+    'attackments',
+    'contract',
+    'contract',
+    $file_definition
+  );
+
+  $manager->installFieldStorageDefinition(
+    'uid',
+    'contract',
+    'contract',
+    $uid_definition
+  );
+
+  $entity_type = $manager->getEntityType('contract');
+  $manager->updateEntityType($entity_type);
+
+  return 'Updated blundle of contract entity';
+
+}

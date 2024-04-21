@@ -1,0 +1,15 @@
+til.task.settings:
+  route_name: til.settings
+  title: 'Settings'
+  base_route: til.settings
+
+til.task.test:
+  route_name: til.test
+  title: 'Test'
+  base_route: til.settings
+
+til.task.get_updates:
+  route_name: til.get_updates
+  title: 'Get Updates'
+  base_route: til.settings
+  weight: 100

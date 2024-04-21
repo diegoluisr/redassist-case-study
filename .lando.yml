@@ -1,0 +1,45 @@
+name: redassist
+recipe: drupal10
+config:
+  webroot: web
+  database: mariadb
+
+services:
+  appserver:
+    build:
+      - composer install
+    run_as_root:
+      - "apt-get update -y"
+      - "apt-get install wget build-essential chrpath libssl-dev libxft-dev libfreetype6-dev libfreetype6 libfontconfig1-dev libfontconfig1 vim -y"
+      - "apt-get install wkhtmltopdf -y"
+      - "apt-get install ffmpeg -y"
+      - 'curl -sL https://deb.nodesource.com/setup_18.x | bash -'
+      - apt-get install -y nodejs
+      - npm install -global gulp-cli
+
+tooling:
+  drush:
+    service: appserver
+    cmd: /app/vendor/bin/drush
+    env:
+      DRUSH_OPTIONS_URI: "https://redassist.lndo.site"
+  npm:
+    service: appserver
+    cmd: npm
+    dir: /app/web/themes/custom/redassist
+  gulp:
+    service: appserver
+    cmd: gulp
+    dir: /app/web/themes/custom/redassist
+  phpcs:
+    service: appserver
+    cmd: vendor/bin/phpcs
+  phpcbf:
+    service: appserver
+    cmd: vendor/bin/phpcbf
+  wkhtmltopdf:
+    service: appserver
+    cmd: /usr/bin/wkhtmltopdf
+  ffmpeg:
+    service: appserver
+    cmd: /usr/bin/ffmpeg

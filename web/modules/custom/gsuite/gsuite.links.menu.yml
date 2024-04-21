@@ -1,0 +1,11 @@
+gsuite:
+  title: 'Gsuite'
+  route_name: gsuite.home
+  descritpion: 'Formularios Gsuite'
+  parent: system.admin_config_services
+
+gsuite.settings:
+  title: 'Gsuite - settings'
+  route_name: gsuite.form.settings
+  descritpion: 'Formulario de configuración para gsuite'
+  parent: gsuite

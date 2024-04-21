@@ -1,0 +1,31 @@
+services:
+  telegram.service:
+    class: Drupal\tis\Service\TelegramService
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@http_client_factory']
+  telegram.commands:
+    class: Drupal\tis\Service\TelegramCommands
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@telegram.bridgewithsales', '@telegram.savesale']
+  telegram.answerskeyboard:
+    class: Drupal\tis\Service\TelegramAnswersKeyboard
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@telegram.savesale', '@telegram.bridgewithsales']
+  telegram.processinputdata:
+    class: Drupal\tis\Service\TelegramProcessInputData
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@telegram.savesale', '@telegram.bridgewithsales']
+  telegram.processfiles:
+    class: Drupal\tis\Service\TelegramProcessFiles
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@telegram.savesale', '@telegram.bridgewithsales']
+  telegram.processsignature:
+    class: Drupal\tis\Service\TelegramProcessSignature
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@telegram.savesale', '@telegram.bridgewithsales']
+  telegram.bridgewithsales:
+    class: Drupal\tis\Service\TelegramBridgeWithSales
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@sales.digitalsale']
+  telegram.savesale:
+    class: Drupal\tis\Service\TelegramSaveSale
+    arguments: ['@config.factory', '@entity_field.manager', '@entity_type.manager', '@entity_type.bundle.info', '@file_system', '@logger.factory', '@messenger', '@state', '@telegram.service', '@telegram.bridgewithsales']
+  #drush commands
+  telegram.command:
+    class: Drupal\tis\Command\TisCommand
+    arguments: ['@telegram.service', '@telegram.commands', '@logger.factory']
+    tags:
+      - { name: drush.command }

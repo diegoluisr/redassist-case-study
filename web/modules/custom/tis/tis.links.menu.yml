@@ -1,0 +1,6 @@
+tis.config_settings_form:
+  title: 'Telegram Integration Service'
+  description: 'TIS (Telegram Integration Service) configuration.'
+  parent: system.admin_config_services
+  route_name: til.settings
+  weight: 120

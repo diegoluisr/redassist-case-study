@@ -1,0 +1,18 @@
+uuid: f53223ef-fd6c-4dab-ba29-4b45045b3265
+langcode: es
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_autentic_sign_email
+field_name: field_autentic_sign_email
+entity_type: paragraph
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

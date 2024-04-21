@@ -1,0 +1,28 @@
+signature:
+    '#type': 'fieldset'
+    '#title': 'B2C-Firma'
+    '#collapsible': false
+    '#collapsed': false
+
+    text:
+      '#type': 'markup'
+      '#markup': '<div">Escribe tu firma en el panel</div>'
+
+    signature_field:
+      '#type': 'signature'
+
+    signature_data:
+      '#type': 'hidden'
+      '#attributes':
+        'id': ['signature_data']
+
+actions:
+  '#type': 'actions'
+  submit:
+    '#type': 'button'
+    '#value': 'Enviar Firma'
+    '#button_type': 'primary'
+    '#attributes' :
+        'onclick' : ['return false;']
+        'id' : ['btn_submit']
+        'class' : ['btn', 'btn-primary']

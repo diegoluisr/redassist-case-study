@@ -1,0 +1,6 @@
+name: 'G Suite Integration'
+type: module
+description: 'Provides G Suite services.'
+package: 'Google'
+core: 8.x
+core_version_requirement: ^8 || ^9

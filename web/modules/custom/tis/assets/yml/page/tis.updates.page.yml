@@ -1,0 +1,14 @@
+table:
+  '#type': 'table'
+  '#header':
+    - Message Id
+    - From
+    - Chat
+    - Date
+    - Text
+  '#rows': []
+  '#empty': 'No hay actualizaciones.'
+  '#attributes':
+    style:
+      - 'max-width:100%;'
+    width: '100%'

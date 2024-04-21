@@ -1,0 +1,10 @@
+entity.contract.collection:
+  title: 'Content Entity Example: Contracts Listing'
+  route_name: entity.contract.collection
+  description: 'List Contracts'
+  weight: 10
+contract.admin.structure.settings:
+  title: Contract Settings
+  description: 'Configure Contract entity'
+  route_name:  entity.contract_type.collection
+  parent: system.admin_structure

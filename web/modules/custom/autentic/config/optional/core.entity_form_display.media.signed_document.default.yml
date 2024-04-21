@@ -1,0 +1,71 @@
+uuid: 1ba66e13-d3ef-4b9a-91d5-c4a99edb54e5
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.media.signed_document.field_autentic_docsign_txid
+    - field.field.media.signed_document.field_media_contract
+    - field.field.media.signed_document.field_media_document
+    - field.field.media.signed_document.field_signers
+    - media.type.signed_document
+  module:
+    - file
+    - paragraphs
+id: media.signed_document.default
+targetEntityType: media
+bundle: signed_document
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_autentic_docsign_txid:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media_contract:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_media_document:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_signers:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Párrafo
+      title_plural: Parráfos
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  status: true
+  uid: true

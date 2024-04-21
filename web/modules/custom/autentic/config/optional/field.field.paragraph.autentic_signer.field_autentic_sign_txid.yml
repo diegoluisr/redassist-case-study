@@ -1,0 +1,27 @@
+uuid: a6cd721e-aac8-40a3-b3f3-b0d4e773b00c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_autentic_sign_txid
+    - paragraphs.paragraphs_type.autentic_signer
+  module:
+    - unique_field_ajax
+third_party_settings:
+  unique_field_ajax:
+    unique: 0
+    per_lang: 0
+    use_ajax: 0
+    message: ''
+id: paragraph.autentic_signer.field_autentic_sign_txid
+field_name: field_autentic_sign_txid
+entity_type: paragraph
+bundle: autentic_signer
+label: 'Transaction ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

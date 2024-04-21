@@ -1,0 +1,27 @@
+# GSUITE ADMIN
+gsuite.home:
+  path: '/admin/gsuite'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'G suite'
+  requirements:
+    _permission: 'administer site configuration'
+
+# CONTROLLERS
+gsuite.controller.connect:
+  path: '/gsuite/google-api/connect'
+  defaults:
+    _controller: '\Drupal\gsuite\Controller\GSuiteController::connect'
+    _title: 'Connect Google APIs'
+  requirements:
+    _permission: 'access content'
+
+# FORMS
+gsuite.form.settings:
+  path: '/admin/config/services/gsuite'
+  defaults:
+    _title: 'G Suite - Settings'
+    _form: '\Drupal\gsuite\Form\SettingsConfigForm'
+    user: NULL
+  requirements:
+    _permission: 'administer site configuration'

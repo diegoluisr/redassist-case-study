@@ -1,0 +1,14 @@
+hablame.task.settings:
+  route_name: hablame.settings
+  title: 'Settings'
+  base_route: hablame.settings
+
+hablame.task.test:
+  route_name: hablame.test
+  title: 'Test'
+  base_route: hablame.settings
+
+hablame.task.status:
+  route_name: hablame.status
+  title: 'SMS Status'
+  base_route: hablame.settings

@@ -1,0 +1,6 @@
+ffmpeg.settings:
+  title: 'FFMPEG settings'
+  route_name: ffmpeg.settings
+  descritpion: 'FFMPEG settings'
+  parent: system.admin_config_system
+  weight: 121

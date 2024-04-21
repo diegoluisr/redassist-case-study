@@ -1,0 +1,17 @@
+# Define the 'local' links for the module
+
+contract.view:
+  route_name: entity.contract.canonical
+  base_route: entity.contract.canonical
+  title: View
+
+contract.page_edit:
+  route_name: entity.contract.edit_form
+  base_route: entity.contract.canonical
+  title: Edit
+
+contract.delete_confirm:
+  route_name:  entity.contract.delete_form
+  base_route:  entity.contract.canonical
+  title: Delete
+  weight: 10

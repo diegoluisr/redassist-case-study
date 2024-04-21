@@ -1,0 +1,17 @@
+email:
+  '#type': 'email'
+  '#title': 'Email'
+  '#required': 'true'
+
+queue:
+  '#type': 'checkbox'
+  '#title': 'Send as queue?'
+
+actions:
+  '#type': 'actions'
+  submit:
+    '#type': 'submit'
+    '#value': 'Send'
+    '#button_type': 'primary'
+
+'#theme': 'system_config_form'

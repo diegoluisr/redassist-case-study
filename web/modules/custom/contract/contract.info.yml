@@ -1,0 +1,13 @@
+name: Contract Entity
+type: module
+description: "Contract entity"
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Security
+version: '8.x-1.0'
+dependencies:
+  - commerce
+  - commerce_order
+  - drupal:core_event_dispatcher
+  - drupal:hook_event_dispatcher
+  - yaml_editor

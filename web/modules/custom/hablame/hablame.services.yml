@@ -1,0 +1,4 @@
+services:
+  hablame.service:
+    class: Drupal\hablame\Service\HablameService
+    arguments: ['@config.factory', '@file_system', '@http_client_factory', '@logger.factory', '@ffmpeg.service']

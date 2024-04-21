@@ -1,0 +1,19 @@
+services:
+  contract.service:
+    class: Drupal\contract\Service\ContractService
+    arguments: ['@entity_type.manager', '@database', '@messenger', '@logger.factory', '@date.formatter']
+
+  # COMMAND
+  contract.command:
+    class: Drupal\contract\Command\ContractCommand
+    arguments: [ '@autentic.service', '@digitalsign.service', '@file_system', '@b2c.pdf_generator']
+    tags:
+      - { name: drush.command }
+
+  # EVENTSUBSCRIBER
+  contract.hook_form_alter:
+    class: 'Drupal\contract\EventSubscriber\AlterContractForm'
+    arguments: ['@config.factory', '@current_route_match', '@entity_type.manager']
+    tags:
+      - { name: 'event_subscriber' }
+

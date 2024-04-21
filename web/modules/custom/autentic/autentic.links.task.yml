@@ -1,0 +1,9 @@
+autentic.task.settings:
+  route_name: autentic.settings
+  title: 'Settings'
+  base_route: autentic.settings
+
+autentic.task.test:
+  route_name: autentic.test
+  title: 'Test'
+  base_route: autentic.settings

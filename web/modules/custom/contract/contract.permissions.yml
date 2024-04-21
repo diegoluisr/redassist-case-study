@@ -1,0 +1,11 @@
+view contract entity:
+  title: 'View Contract entity'
+add contract entity:
+  title: 'Add Contract entity'
+edit contract entity:
+  title: 'Edit Contract Entity'
+delete contract entity:
+  title: 'Delete Contract entity'
+administer contract entity:
+  title: 'Administer Contract entity'
+  restrict access: TRUE

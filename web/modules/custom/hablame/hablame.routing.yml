@@ -1,0 +1,30 @@
+hablame.settings:
+  path: '/admin/config/hablame'
+  defaults:
+    _form: '\Drupal\hablame\Form\SettingsConfigForm'
+    _title: 'Hablame.co Config'
+  requirements:
+    _permission: 'administer site configuration'
+hablame.test:
+  path: '/admin/config/hablame/test'
+  defaults:
+    _form: '\Drupal\hablame\Form\TestForm'
+    _title: 'Hablame.co Test'
+  requirements:
+    _permission: 'administer site configuration'
+hablame.status:
+  path: '/admin/config/hablame/status'
+  defaults:
+    _form: '\Drupal\hablame\Form\StatusForm'
+    _title: 'Hablame.co SMS Status'
+  requirements:
+    _permission: 'administer site configuration'
+hablame.validate_otp:
+  path: '/validate/{hash}/otp'
+  defaults:
+    _form: '\Drupal\hablame\Form\ValidateOtpForm'
+    _title: 'Validar código OTP'
+  requirements:
+    # access: 'TRUE'
+    _permission: 'access content'
+    hash: '([0-9a-f]|\-)+'

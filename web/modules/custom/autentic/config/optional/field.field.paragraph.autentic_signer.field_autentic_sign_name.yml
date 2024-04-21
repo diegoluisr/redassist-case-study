@@ -1,0 +1,27 @@
+uuid: ad4fcc78-5526-4782-b8fb-4d9c98f8c971
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_autentic_sign_name
+    - paragraphs.paragraphs_type.autentic_signer
+  module:
+    - unique_field_ajax
+third_party_settings:
+  unique_field_ajax:
+    unique: 0
+    per_lang: 0
+    use_ajax: 0
+    message: ''
+id: paragraph.autentic_signer.field_autentic_sign_name
+field_name: field_autentic_sign_name
+entity_type: paragraph
+bundle: autentic_signer
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

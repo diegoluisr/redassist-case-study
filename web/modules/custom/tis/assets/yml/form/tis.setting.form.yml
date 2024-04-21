@@ -1,0 +1,42 @@
+http_api:
+  '#type': 'textfield'
+  '#title': 'HTTP API'
+  '#required': 'true'
+  '#maxlength': '50'
+
+webhook:
+  '#type': 'textfield'
+  '#title': 'Webhook URL'
+
+signature_webapp_url:
+  '#type': 'textfield'
+  '#title': 'Signature Web App URL'
+
+support_url:
+  '#type': 'textfield'
+  '#title': 'Support URL'
+
+terms_url:
+  '#type': 'textfield'
+  '#title': 'Terms and conditions URL'
+
+website_url:
+  '#type': 'textfield'
+  '#title': 'Website URL'
+
+chats:
+  '#type': 'table'
+  '#caption': 'Tabla de configuracion de chats y grupos'
+  '#header':
+    - 'Chat Id'
+    - 'Chat channels'
+  '#repeat':
+    id:
+      '#type': 'textfield'
+      '#title': 'Chat Id'
+      '#title_display': 'invisible'
+      '#maxlength': '20'
+    groups:
+      '#type': 'textfield'
+      '#title': 'Chat channel'
+      '#title_display': 'invisible'

@@ -1,0 +1,27 @@
+uuid: 084e4eb8-e0f3-4210-aee0-236d055ca875
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_document
+    - media.type.signed_document
+  module:
+    - file
+id: media.signed_document.field_media_document
+field_name: field_media_document
+entity_type: media
+bundle: signed_document
+label: 'Signed File (PDF)'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: pdf
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

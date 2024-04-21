@@ -1,0 +1,37 @@
+uuid: a9ca242f-bd0b-45b2-b507-cef5e4c3c0a7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_signers
+    - media.type.signed_document
+    - paragraphs.paragraphs_type.autentic_signer
+  module:
+    - entity_reference_revisions
+id: media.signed_document.field_signers
+field_name: field_signers
+entity_type: media
+bundle: signed_document
+label: Firmantes
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      autentic_signer: autentic_signer
+    target_bundles_drag_drop:
+      autentic_signer:
+        enabled: true
+        weight: 4
+      corte_de_venta:
+        weight: 5
+        enabled: false
+      item_cuenta_de_cobro:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,27 @@
+uuid: 0d627e6c-f743-4222-bf74-cb9f5d44332c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_autentic_docsign_txid
+    - media.type.signed_document
+  module:
+    - unique_field_ajax
+third_party_settings:
+  unique_field_ajax:
+    unique: 0
+    per_lang: 0
+    use_ajax: 0
+    message: ''
+id: media.signed_document.field_autentic_docsign_txid
+field_name: field_autentic_docsign_txid
+entity_type: media
+bundle: signed_document
+label: 'Transaction ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

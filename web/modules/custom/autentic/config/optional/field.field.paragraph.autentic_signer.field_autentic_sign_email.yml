@@ -1,0 +1,27 @@
+uuid: 6ebc0878-22d4-405a-a415-f49b83037fcb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_autentic_sign_email
+    - paragraphs.paragraphs_type.autentic_signer
+  module:
+    - unique_field_ajax
+third_party_settings:
+  unique_field_ajax:
+    unique: 0
+    per_lang: 0
+    use_ajax: 0
+    message: ''
+id: paragraph.autentic_signer.field_autentic_sign_email
+field_name: field_autentic_sign_email
+entity_type: paragraph
+bundle: autentic_signer
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

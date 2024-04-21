@@ -1,0 +1,60 @@
+uuid: e93ffcbd-b465-40c5-92da-c2c11a46aa9e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.autentic_signer.field_autentic_sign_docid
+    - field.field.paragraph.autentic_signer.field_autentic_sign_email
+    - field.field.paragraph.autentic_signer.field_autentic_sign_name
+    - field.field.paragraph.autentic_signer.field_autentic_sign_phone
+    - field.field.paragraph.autentic_signer.field_autentic_sign_txid
+    - paragraphs.paragraphs_type.autentic_signer
+  module:
+    - telephone
+id: paragraph.autentic_signer.default
+targetEntityType: paragraph
+bundle: autentic_signer
+mode: default
+content:
+  field_autentic_sign_docid:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_autentic_sign_email:
+    type: email_default
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_autentic_sign_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_autentic_sign_phone:
+    type: telephone_default
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_autentic_sign_txid:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

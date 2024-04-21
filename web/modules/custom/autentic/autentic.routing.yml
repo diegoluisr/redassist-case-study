@@ -1,0 +1,14 @@
+autentic.settings:
+  path: '/admin/config/autentic'
+  defaults:
+    _form: '\Drupal\autentic\Form\SettingsConfigForm'
+    _title: 'AutenTIC Config'
+  requirements:
+    _permission: 'administer site configuration'
+autentic.test:
+  path: '/admin/config/autentic/test'
+  defaults:
+    _form: '\Drupal\autentic\Form\TestForm'
+    _title: 'Autentic Test'
+  requirements:
+    _permission: 'administer site configuration'

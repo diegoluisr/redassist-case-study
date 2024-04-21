@@ -1,0 +1,10 @@
+contract.contract_type.*:
+  type: config_entity
+  label: 'Contract config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'

@@ -1,0 +1,11 @@
+# All action links for this module
+
+contract.contract_add:
+  # Which route will be called by the link
+  route_name: entity.contract.add_page
+  title: 'Add Contract'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.contract.collection
+    - entity.contract.canonical

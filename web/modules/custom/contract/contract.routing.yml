@@ -1,0 +1,30 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.contract.collection:
+  path: '/contract/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contract entity.
+    _entity_list: 'contract'
+    _title: 'Contract List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer contract entity'
+
+entity.contract_type.collection:
+  path: 'admin/structure/contract_settings'
+  defaults:
+    _entity_list: 'contract_type'
+    _title: 'Contract Types'
+  requirements:
+    _permission: 'administer contract entity'
+
+# BATCH FORMS
+contract.batch_form:
+  path: '/admin/config/services/contract-batch'
+  defaults:
+    _title: 'Formulario de actualización - Contratos'
+    _form: '\Drupal\contract\Form\ContractBatchForm'
+  requirements:
+    _permission: 'administer site configuration'

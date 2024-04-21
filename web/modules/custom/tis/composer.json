@@ -1,0 +1,19 @@
+{
+  "name": "contenidosk/tis",
+  "description": "Enables Telegram Integration Services as a module.",
+  "type": "drupal-module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Diego Luis Restrepo (diegoluisr)",
+      "homepage": "https://www.drupal.org/u/diegoluisr",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/core": "^8.8 || ^9",
+    "http-interop/http-factory-guzzle": "^1.0",
+    "php-http/guzzle6-adapter": "^2.0",
+    "tg-bot-api/bot-api-base": "^1.7"
+  }
+}

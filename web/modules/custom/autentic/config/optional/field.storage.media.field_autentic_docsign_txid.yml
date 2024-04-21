@@ -1,0 +1,21 @@
+uuid: b96ebdfd-b490-4a3c-9749-d0ba7d7179b0
+langcode: es
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_autentic_docsign_txid
+field_name: field_autentic_docsign_txid
+entity_type: media
+type: string
+settings:
+  max_length: 50
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

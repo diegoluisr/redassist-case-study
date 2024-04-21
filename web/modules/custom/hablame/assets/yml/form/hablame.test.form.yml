@@ -1,0 +1,29 @@
+phone:
+  '#type': 'textfield'
+  '#title': 'Phone'
+  '#required': 'true'
+  '#maxlength': 12
+  '#pattern': '[0-9]{12}'
+
+message:
+  '#type': 'textarea'
+  '#title': 'Message'
+
+otp:
+  '#type': 'textfield'
+  '#title': 'OTP code'
+  '#description': 'Inserte solo numeros, este sera enviado por callblasting.'
+  '#maxlength': 6
+
+queue:
+  '#type': 'checkbox'
+  '#title': 'Send as queue?'
+
+actions:
+  '#type': 'actions'
+  submit:
+    '#type': 'submit'
+    '#value': 'Send'
+    '#button_type': 'primary'
+
+'#theme': 'system_config_form'

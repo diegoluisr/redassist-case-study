@@ -1,0 +1,7 @@
+ffmpeg.settings:
+  path: '/admin/config/ffmpeg'
+  defaults:
+    _form: '\Drupal\ffmpeg\Form\SettingsConfigForm'
+    _title: 'FFMPEG Config'
+  requirements:
+    _permission: 'administer site configuration'

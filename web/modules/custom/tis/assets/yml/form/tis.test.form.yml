@@ -1,0 +1,18 @@
+group:
+  '#type': 'select'
+  '#title': 'Group'
+  '#required': 'true'
+
+message:
+  '#type': 'textarea'
+  '#title': 'Message'
+  '#required': 'true'
+
+actions:
+  '#type': 'actions'
+  submit:
+    '#type': 'submit'
+    '#value': 'Send'
+    '#button_type': 'primary'
+
+'#theme': 'system_config_form'

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * The tis module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\tis\Form\TisSettingsForm;
+use Drupal\tis\HookFactory;
+
+/**
+ * Implements hook_help().
+ */
+function tis_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name == 'help.page.b2c') {
+    $hook = HookFactory::build(__FUNCTION__);
+    if ($hook !== NULL) {
+      return $hook->call();
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function tis_page_attachments(array &$page) {
+
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface $config */
+  $tis_config = \Drupal::service('config.factory')->get(TisSettingsForm::SETTINGS);
+  $page['#attached']['drupalSettings']['url'] = $tis_config->get('webhook');
+}

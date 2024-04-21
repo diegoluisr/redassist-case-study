@@ -1,0 +1,34 @@
+til.settings:
+  path: '/admin/config/tis/settings'
+  defaults:
+    _form: '\Drupal\tis\Form\TisSettingsForm'
+    _title: 'TIS (Telegram Integration Services) - Config'
+  requirements:
+    _permission: 'administer site configuration'
+til.test:
+  path: '/admin/config/tis/test'
+  defaults:
+    _form: '\Drupal\tis\Form\TestForm'
+    _title: 'TIS (Telegram Integration Services) - Test'
+  requirements:
+    _permission: 'administer site configuration'
+til.get_updates:
+  path: '/admin/config/tis/updates'
+  defaults:
+    _controller: '\Drupal\tis\Controller\UpdatesController::getUpdates'
+    _title: 'TIS (Telegram Integration Services) - Updates'
+  requirements:
+    _permission: 'administer site configuration'
+    _user_is_logged_in: 'TRUE'
+til.webhook:
+  path: '/tis/webhook'
+  defaults:
+    _controller: '\Drupal\tis\Controller\WebhookController::processRequests'
+  requirements:
+    _access: 'TRUE'
+til.signature:
+  path: '/tis/signature'
+  defaults:
+    _controller: '\Drupal\tis\Controller\SignatureApp::showSignatureForm'
+  requirements:
+    _access: 'TRUE'

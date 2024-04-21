@@ -1,0 +1,56 @@
+uuid: b4edf91c-6bc3-4063-8559-b17e2841efb7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.autentic_signer.field_autentic_sign_docid
+    - field.field.paragraph.autentic_signer.field_autentic_sign_email
+    - field.field.paragraph.autentic_signer.field_autentic_sign_name
+    - field.field.paragraph.autentic_signer.field_autentic_sign_phone
+    - field.field.paragraph.autentic_signer.field_autentic_sign_txid
+    - paragraphs.paragraphs_type.autentic_signer
+id: paragraph.autentic_signer.default
+targetEntityType: paragraph
+bundle: autentic_signer
+mode: default
+content:
+  field_autentic_sign_docid:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_autentic_sign_email:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_autentic_sign_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_autentic_sign_phone:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_autentic_sign_txid:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

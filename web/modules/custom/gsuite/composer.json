@@ -1,0 +1,16 @@
+{
+    "name": "drupal/gsuite",
+    "type": "drupal-module",
+    "description": "G Suite Integration",
+    "keywords": ["Drupal"],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/gsuite",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/gsuite",
+        "source": "http://cgit.drupalcode.org/gsuite"
+    },
+    "require": {
+        "google/apiclient": "^2.4.1"
+    }
+}
