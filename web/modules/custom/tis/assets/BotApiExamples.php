@@ -10,7 +10,7 @@
  */
 // @codingStandardsIgnoreStart
 function registerCommands() {
-  $url = "https://api.telegram.org/bot5255801758:AAE26mJ34-C-dmzzfX0nxF9uc_sT7y50eF4/setMyCommands";
+  $url = "https://api.telegram.org/bot5155701758:AAE26mJ34-C-dmzzfX0nxF9uc_sT6y50eF3/setMyCommands";
 
   $commands = [
         ['command' => 'start', 'description' => 'cerrar una nueva venta.'],
