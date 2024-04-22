@@ -1,60 +1,51 @@
 # Micro Insurance - Case Study
 
-Start with a clear headline. This should be like a newspaper headline that gives the most important information. ...
-Provide a snapshot. ...
-Introduce the client. ...
-State the problem, consequences, & hesitations. ...
-Describe the solution. ...
-Share the results & benefits. ...
-Conclude with words of advice and a CTA.
+This case study is an overview of a project I worked on and led almost two years ago. This project was a real challenge in the search for how to solve client needs using all the advantages of Drupal as a CMS/Framework.
 
-This case study is an overview for a project where I worked and lead almost 2 years ago, this project was a real challenge in the search of how to solve client needs using all the advantages of Drupal as a CMS/Framework.
+This repository doesn't attempt to show the complete workflow for the company's solutions because their business processes cover them.
 
-This repository isn't an effort to show the complete workflow for the companies solutions, because they are covered by the bussiness process of them.
+[933 Asistencia - B2C](https://933asistencia.com/) and [RedAssist](https://vivetranquilo.co/) are two leading companies in Colombia that provide micro-insurance for home issues. They offer a wide range of options to solve common home issues, such as plumbing, broken glasses, locked doors, etc., by hiring professionals to solve those issues.
 
-[933 Asistencia - B2C](https://933asistencia.com/) and [RedAssist](https://vivetranquilo.co/) are two different leader companies on the micro insurance for home issue in Colombia, they provide a wide pool of options to solve common issue in home as plumbery, broken glasses, locked doors, etc. Providing professionals to solve those issues.
+Before this software solution, both companies used paper contracts to engage new clients. So, this solution reduces the time needed to fill out the forms and paper usage and even takes advantage of new laws to allow the digital process.
 
-Previous to this software solution, both companies use to engage new clients using paper contracts. So, this solution reduce the time for filling the forms, paper usage, and even take advantage of new laws to allow the digital process.
-
-The process workflow was discussed and designed in colaboration with legal, product, sales and tech teams. I lead this process from the technical side and modeling the required process using BPMN.
+The process workflow was discussed and designed in collaboration with the legal, product, sales, and tech teams. I led this process from the technical side and modeled the required process using BPMN.
 
 ![Diagram](./.project/assets/digital-signature-diagram.svg)
 [Download](./.project/assets/digital-signature-diagram.bpmn) | [Open it on BMPN.io](https://bpmn.io/)
 
-The process starts with a ensurance request, where the requester must to fill several fields, even including attaching support files in order to fulfil legal quality standards from the company and the govern, as an effort to avoid claims from problematic clients.
+The process starts with an insurance request, where the requester must fill in several fields, including attaching support files to fulfill legal quality standards from the company and the government to avoid claims from problematic clients.
 
-The process allow the companies to sale a larger number of insurances per day that regular. On the time lapse of 6 months, this software implementation sold more thah 2 thousand insurances, and aim the companies to accomplish their goals.
+The process allows the companies to sell more insurance daily than usual. In the time lapse of 6 months, this software implementation sold more than 2 thousand insurance policies, aiming to accomplish the companies' goals.
 
 | B2C | RedAssist |
 | --- | --------- |
 | ![Diagram](./.project/assets/b2c.png) | ![Diagram](./.project/assets/redassist.png) |
 | [Access form](https://ventas.b2c.net.co/sale/b2c/steps/427) | [Access form](https://ventas.b2c.net.co/virtual/redassist/miventa) |
 
+Each request is considered an e-commerce sale, so we create a client and its insurance as part of a commerce process.
 
-Each request is considered an e-commerce sale, so, we create a client and its insurance as part of a commerce process.
-
-When the cart is creted, an OTP is sent using a third party provider for OTP (One Time Password), this password is sent as SMS and audio call to validate insurance requester identity, I created `hablame` custom module to send SMS and start the call, and the `ffmpeg` module to create a custom audio concatenating gretting audio with numeric representations of digits.
+When the cart is created, an OTP (one-time password) is sent using a third-party provider. This password is sent as an SMS and audio call to validate the insurance requester's identity. I created a `hablame` custom module to send SMS and start the call and the `ffmpeg` module to create a custom audio concatenating audio with numeric representations of digits.
 
 ## Custom Modules
 
-Some custom modules are listed next to give more datail over the process specific needs.
+Some custom modules are listed next to give more detail about the process-specific needs.
 
 ### Hablame
 
-This module communicates with hablame service to do some tasks related to create and send OTP and short URLs. [Hablame](https://www.hablame.co/) was selected as a local provider instead of more popular services as Twilio, because prices are lower to the target market (Colombia). Check the custom module created [here](./web/modules/custom/hablame/).
+This module communicates with the Hablame service to perform some tasks related to creating and sending OTP and short URLs. [Hablame](https://www.hablame.co/) was selected as a local provider instead of more popular services like Twilio because its prices are lower in the target market (Colombia). Check the custom module created [here](./web/modules/custom/hablame/).
 
 ### FFMPEG
 
-This module is a custom version of the contributed/sandboxed module with same name [drupal/ffmpeg](https://www.drupal.org/project/ffmpeg). [FFMPEG](https://ffmpeg.org/) was selected because it is an open source alternative to work with images and video. Check the custom module created [here](./web/modules/custom/ffmpeg/).
+This module is a custom version of the contributed/sandboxed module with the same name: [drupal/ffmpeg](https://www.drupal.org/project/ffmpeg). [FFMPEG](https://ffmpeg.org/) was selected because it is an open-source alternative for working with images and video. Check the custom module created [here](./web/modules/custom/ffmpeg/).
 
 ### Autentic
 
-This module was created to connect to [Autentic](https://autenticlatam.com/) provider, it is a service to do digital signature legaly bindable, according to Colombian law. Check the custom module created [here](./web/modules/custom/autentic/).
+I created this module to connect to [Autentic](https://autenticlatam.com/) a service that provides legally bindable digital signatures according to Colombian law. Check the custom module created [here](./web/modules/custom/autentic/).
 
 ### Gsuite
 
-This module was created using the contributed/sandboxed module with same name [GSuite](https://www.drupal.org/project/gsuite), it was used to create spreadsheets reports of sales, asyncronically updated to bypass performace issues related to the large number of sales, and the limited resources of the backend server. Reports was shared on read-only mode to help sales team to check the daily/weekly/monthly numbers. Check the custom module created [here](./web/modules/custom/gsuite/).
+The Gsuite module, a solution-oriented creation, was developed using the contributed/sandboxed module with the same name [GSuite](https://www.drupal.org/project/gsuite), It was specifically designed to create spreadsheet reports of sales, which are asynchronously updated to overcome performance issues related to the large number of sales and the limited resources of the backend server. These reports are shared in read-only mode, facilitating the sales team in monitoring the daily/weekly/monthly numbers. Discover this problem-solving custom module [here](./web/modules/custom/gsuite/).
 
 ### TIS (Telegram Integration Services)
 
-This module was created to provide an alternative to sale insurances using Telegram API, this implementation exposes questions to requesters with the goal of fulfil all the needed fields in a regular form. Check the custom module created [here](./web/modules/custom/tis/).
+This module was created to provide an alternative to selling insurance using Telegram API. This implementation exposes questions to requesters with the goal of fulfilling all the needed fields in a regular form. Check the custom module created [here](./web/modules/custom/tis/).
