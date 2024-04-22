@@ -1,6 +1,6 @@
 # Micro Insurance - Case Study
 
-This case study is an overview of a project I worked on and led almost two years ago. This project was a real challenge in the search for how to solve client needs using all the advantages of Drupal as a CMS/Framework.
+This case study is an overview of a project I worked on and led almost two years ago. This project was a real challenge in the search for how to solve a client' needs using all the advantages of Drupal as a CMS/Framework.
 
 This repository doesn't attempt to show the complete workflow for the company's solutions because their business processes cover them.
 
@@ -24,7 +24,7 @@ The process allows the companies to sell more insurance daily than usual. In the
 
 Each request is considered an e-commerce sale, so we create a client and its insurance as part of a commerce process.
 
-When the cart is created, an OTP (one-time password) is sent using a third-party provider. This password is sent as an SMS and audio call to validate the insurance requester's identity. I created a `hablame` custom module to send SMS and start the call and the `ffmpeg` module to create a custom audio concatenating audio with numeric representations of digits.
+When the cart is created, an OTP (one-time password) is sent using a third-party provider. This password is sent as an SMS and audio call to validate the insurance requester's identity. I created a `hablame` custom module to send SMS and start the call and the `FFMPEG` module to create a custom audio concatenating audio that will be the result of numeric representations of digits.
 
 ## Custom Modules
 
@@ -44,7 +44,7 @@ I created this module to connect to [Autentic](https://autenticlatam.com/) a ser
 
 ### Gsuite
 
-The Gsuite module, a solution-oriented creation, was developed using the contributed/sandboxed module with the same name [GSuite](https://www.drupal.org/project/gsuite), It was specifically designed to create spreadsheet reports of sales, which are asynchronously updated to overcome performance issues related to the large number of sales and the limited resources of the backend server. These reports are shared in read-only mode, facilitating the sales team in monitoring the daily/weekly/monthly numbers. Discover this problem-solving custom module [here](./web/modules/custom/gsuite/).
+It was developed using the contributed/sandboxed module with the same name [GSuite](https://www.drupal.org/project/gsuite), It was specifically designed to create spreadsheet reports of sales, which are asynchronously updated to overcome performance issues related to the large number of sales and the limited resources of the backend server. These reports are shared in read-only mode, facilitating the sales team in monitoring the daily/weekly/monthly numbers. Discover this problem-solving custom module [here](./web/modules/custom/gsuite/).
 
 ### TIS (Telegram Integration Services)
 
